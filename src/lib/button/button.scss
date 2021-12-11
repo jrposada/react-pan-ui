@@ -1,0 +1,158 @@
+@mixin button-theme(
+  $color,
+  $color-hover,
+  $color-active,
+  $background-color,
+  $background-color-hover,
+  $background-color-active,
+  $border-color,
+  $border-color-hover,
+  $border-color-active
+) {
+  background-color: $background-color;
+  color: $color;
+  border-color: $border-color;
+
+  &:hover:not(:disabled) {
+    background-color: $background-color-hover;
+    color: $color-hover;
+    border-color: $border-color-hover;
+  }
+
+  &:active:not(:disabled) {
+    background-color: $background-color-active;
+    color: $color-active;
+    border-color: $border-color-active;
+  }
+}
+
+.pan-ui-button {
+  box-sizing: border-box;
+
+  padding: var(--pan-ui-padding-xxs) var(--pan-ui-padding-s);
+
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--pan-ui-gap-s);
+
+  border-style: solid;
+  border-width: 1px;
+  border-radius: var(--pan-ui-radius-m);
+
+  font-size: var(--pan-ui-font-m);
+  font-weight: 600;
+
+  transition: all 250ms ease-out;
+
+  & .pan-ui-button__icon {
+    & svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+
+    &:hover:not(.pan-ui-button--loading) {
+      cursor: not-allowed;
+    }
+  }
+
+  &:not(.pan-ui-button--primary):not(.pan-ui-button--secondary):not(.pan-ui-button--contrast):not(.pan-ui-button--success):not(.pan-ui-button--danger) {
+    @include button-theme(
+      var(--pan-ui-base-color),
+      var(--pan-ui-base-color-hover),
+      var(--pan-ui-base-color-active),
+      transparent,
+      var(--pan-ui-base-background-color-hover),
+      var(--pan-ui-base-background-color-active),
+      var(--pan-ui-base-color),
+      var(--pan-ui-base-color),
+      var(--pan-ui-base-color)
+    );
+  }
+
+  &--primary {
+    @include button-theme(
+      var(--pan-ui-primary-color),
+      var(--pan-ui-primary-color-hover),
+      var(--pan-ui-primary-color-active),
+      var(--pan-ui-primary-background-color),
+      var(--pan-ui-primary-background-color-hover),
+      var(--pan-ui-primary-background-color-active),
+      var(--pan-ui-primary-background-color),
+      var(--pan-ui-primary-background-color-hover),
+      var(--pan-ui-primary-background-color-active)
+    );
+  }
+
+  &--secondary {
+    @include button-theme(
+      var(--pan-ui-secondary-color),
+      var(--pan-ui-secondary-color-hover),
+      var(--pan-ui-secondary-color-active),
+      var(--pan-ui-secondary-background-color),
+      var(--pan-ui-secondary-background-color-hover),
+      var(--pan-ui-secondary-background-color-active),
+      var(--pan-ui-secondary-background-color),
+      var(--pan-ui-secondary-background-color-hover),
+      var(--pan-ui-secondary-background-color-active)
+    );
+  }
+
+  &--contrast {
+    @include button-theme(
+      var(--pan-ui-contrast-color),
+      var(--pan-ui-contrast-color-hover),
+      var(--pan-ui-contrast-color-active),
+      var(--pan-ui-contrast-background-color),
+      var(--pan-ui-contrast-background-color-hover),
+      var(--pan-ui-contrast-background-color-active),
+      var(--pan-ui-contrast-background-color),
+      var(--pan-ui-contrast-background-color-hover),
+      var(--pan-ui-contrast-background-color-active)
+    );
+  }
+
+  &--success {
+    @include button-theme(
+      var(--pan-ui-success-color),
+      var(--pan-ui-success-color-hover),
+      var(--pan-ui-success-color-active),
+      var(--pan-ui-success-background-color),
+      var(--pan-ui-success-background-color-hover),
+      var(--pan-ui-success-background-color-active),
+      var(--pan-ui-success-background-color),
+      var(--pan-ui-success-background-color-hover),
+      var(--pan-ui-success-background-color-active)
+    );
+  }
+
+  &--danger {
+    @include button-theme(
+      var(--pan-ui-danger-color),
+      var(--pan-ui-danger-color-hover),
+      var(--pan-ui-danger-color-active),
+      var(--pan-ui-danger-background-color),
+      var(--pan-ui-danger-background-color-hover),
+      var(--pan-ui-danger-background-color-active),
+      var(--pan-ui-danger-background-color),
+      var(--pan-ui-danger-background-color-hover),
+      var(--pan-ui-danger-background-color-active)
+    );
+  }
+
+  &--rounded {
+    border-radius: 16px;
+  }
+
+  &--no-events {
+    pointer-events: none;
+  }
+
+  &--loading {
+    cursor: wait;
+  }
+}
