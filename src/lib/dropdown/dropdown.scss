@@ -8,9 +8,6 @@
     display: inline-flex;
     align-items: center;
 
-    background-color: var(--react-ui-background);
-    color: var(--react-ui-color);
-
     cursor: pointer;
   }
 
@@ -19,8 +16,6 @@
     position: absolute;
     z-index: 1;
     cursor: auto;
-
-    background-color: var(--react-ui-background);
 
     &--open {
       display: block;
