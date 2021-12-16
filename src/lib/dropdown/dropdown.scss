@@ -1,0 +1,42 @@
+.react-ui-dropdown {
+  position: relative;
+  display: inline-block;
+
+  margin: var(--react-ui-element-margin);
+
+  &__trigger {
+    display: inline-flex;
+    align-items: center;
+
+    background-color: var(--react-ui-background);
+    color: var(--react-ui-color);
+
+    cursor: pointer;
+  }
+
+  &__panel {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    cursor: auto;
+
+    background-color: var(--react-ui-background);
+
+    &--open {
+      display: block;
+    }
+
+    &--top {
+      bottom: 100%;
+    }
+    &--left {
+      right: 100%;
+    }
+    &--bottom {
+      top: 100%;
+    }
+    &--right {
+      left: 100%;
+    }
+  }
+}
