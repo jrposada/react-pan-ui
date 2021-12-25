@@ -5,11 +5,11 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
 import Button, { ButtonProps } from 'lib/button/button'
 
 const types: ButtonProps[] = [
-  { type: 'primary' },
-  { type: 'secondary' },
-  { type: 'contrast' },
-  { type: 'success' },
-  { type: 'danger' },
+  { variant: 'primary' },
+  { variant: 'secondary' },
+  { variant: 'contrast' },
+  { variant: 'success' },
+  { variant: 'danger' },
   {},
 ]
 
@@ -54,7 +54,7 @@ function Buttons() {
           >
             {modifiers.map((modifier) => (
               <Button {...buttonType} {...modifier}>
-                Label
+                {buttonType.variant ?? 'default'}
               </Button>
             ))}
             <Button
@@ -63,14 +63,14 @@ function Buttons() {
               loading={isLoading}
               icon={<FontAwesomeIcon icon={faUser} />}
             >
-              Label
+              {buttonType.variant ?? 'default'}
             </Button>
             <Button
               {...buttonType}
               onClick={setIsLoadingFor(2000)}
               loading={isLoading}
             >
-              Label
+              {buttonType.variant ?? 'default'}
             </Button>
           </div>
         ))}
