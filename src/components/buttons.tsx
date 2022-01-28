@@ -43,8 +43,9 @@ function Buttons() {
     <>
       Buttons
       <div style={{ display: 'flex', gap: '15px' }}>
-        {types.map((buttonType) => (
+        {types.map((buttonType, i) => (
           <div
+            key={i}
             style={{
               display: 'flex',
               flexDirection: 'column',
@@ -52,8 +53,8 @@ function Buttons() {
               alignItems: 'center',
             }}
           >
-            {modifiers.map((modifier) => (
-              <Button {...buttonType} {...modifier}>
+            {modifiers.map((modifier, j) => (
+              <Button key={j} {...buttonType} {...modifier}>
                 Label
               </Button>
             ))}

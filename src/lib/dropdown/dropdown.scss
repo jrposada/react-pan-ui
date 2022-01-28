@@ -1,42 +1,37 @@
-.react-ui-dropdown {
+.pan-ui-dropdown {
   position: relative;
-  display: inline-block;
-
-  margin: var(--react-ui-element-margin);
+  display: inline-flex;
 
   &__trigger {
     display: inline-flex;
     align-items: center;
 
-    background-color: var(--react-ui-background);
-    color: var(--react-ui-color);
-
     cursor: pointer;
   }
 
-  &__panel {
-    display: none;
-    position: absolute;
-    z-index: 1;
-    cursor: auto;
+  &--disabled .pan-ui-dropdown__trigger {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
 
-    background-color: var(--react-ui-background);
+.pan-ui-dropdown-panel {
+  display: block;
+  position: absolute;
+  z-index: 1030;
 
-    &--open {
-      display: block;
-    }
+  overflow-x: hidden;
+  overflow-y: auto;
 
-    &--top {
-      bottom: 100%;
-    }
-    &--left {
-      right: 100%;
-    }
-    &--bottom {
-      top: 100%;
-    }
-    &--right {
-      left: 100%;
-    }
+  animation: fade-in 200ms cubic-bezier(0.694, 0.0482, 0.335, 1) forwards;
+  transform-origin: top center;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
