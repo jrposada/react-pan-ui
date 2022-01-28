@@ -1,5 +1,6 @@
 import Badges from 'components/badges'
 import Buttons from 'components/buttons'
+import Dots from 'components/dots'
 import Dropdowns from 'components/dropdowns'
 
 function ExamplesPage() {
@@ -8,6 +9,7 @@ function ExamplesPage() {
       <Dropdowns />
       <Buttons />
       <Badges />
+      <Dots />
     </div>
   )
 }
