@@ -5,7 +5,13 @@ function FormFields() {
     <>
       FormFields
       <div style={{ display: 'flex', gap: '15px' }}>
-        <FormField label="Label" layout="vertical" showError error="Error">
+        <FormField
+          label="Label"
+          layout="vertical"
+          showError
+          error="Error"
+          required
+        >
           <input />
         </FormField>
         <FormField label="Label" layout="horizontal" showError error="Error">

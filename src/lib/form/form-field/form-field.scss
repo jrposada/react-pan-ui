@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: column;
 
+  &__required {
+    color: var(--pan-ui-palette-danger);
+  }
+
   &__error {
     height: var(--pan-ui-font-s);
     font-size: var(--pan-ui-font-s);

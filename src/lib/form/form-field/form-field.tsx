@@ -7,6 +7,7 @@ type FormFieldLayout = 'vertical' | 'horizontal'
 interface FormFieldProps {
   id?: string
   label?: ReactNode
+  required?: boolean
   error?: string
   showError?: boolean
   layout?: FormFieldLayout
@@ -15,6 +16,7 @@ interface FormFieldProps {
 function FormField({
   id,
   label,
+  required,
   error,
   showError,
   layout = 'vertical',
@@ -25,7 +27,12 @@ function FormField({
 
   return (
     <div className={cssClass}>
-      {!!label && <label htmlFor={id}>{label}</label>}
+      {!!label && (
+        <label htmlFor={id}>
+          {label}
+          {!!required && <span className="pan-ui-form-field__required">*</span>}
+        </label>
+      )}
       <div>
         {children}
         {!!showError && <div className="pan-ui-form-field__error">{error}</div>}
@@ -35,3 +42,4 @@ function FormField({
 }
 
 export default FormField
+export type { FormFieldProps }
