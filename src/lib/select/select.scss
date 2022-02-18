@@ -1,0 +1,88 @@
+// @transition: all 250ms ease-out;
+
+// .rutile-select {
+//   display: flex;
+//   flex-direction: column;
+
+//   color: var(--rutile-theme-component-color);
+
+//   &__trigger {
+//     // We have to manually account for .rutile-dropdown__trigger border.
+//     height: 30px;
+//     padding: 8px;
+
+//     flex-grow: 1;
+
+//     display: flex;
+//     align-items: center;
+//     gap: 8px;
+
+//     background-color: var(--rutile-theme-component-background);
+//     border-radius: 4px;
+
+//     font-weight: 400;
+//   }
+
+//   &__label {
+//     margin-bottom: 4px;
+//   }
+
+//   &__value {
+//     flex-grow: 1;
+
+//     &--placeholder {
+//       color: #727373;
+//     }
+//   }
+
+//   &__divider {
+//     width: 1px;
+//     height: 16px;
+
+//     background-color: var(--rutile-theme-component-border-color);
+//   }
+
+//   &__clear {
+//     opacity: 0.5;
+//   }
+
+//   &__error {
+//     color: var(--rutile-palette-danger);
+//     font-size: 10px;
+
+//     text-align: left;
+//   }
+//   &:not(.rutile-select--no-error) {
+//     & .rutile-select__error {
+//       height: 16px;
+//     }
+//   }
+
+//   & .rutile-dropdown {
+//     &--open {
+//       .rutile-dropdown__trigger {
+//         border-color: var(--rutile-palette-secondary);
+//       }
+//     }
+
+//     &__trigger {
+//       border: 1px solid var(--rutile-theme-component-border-color);
+//       border-radius: 4px;
+
+//       transition: @transition;
+
+//       flex-grow: 1;
+
+//       &--disabled {
+//         cursor: wait;
+//       }
+//     }
+//   }
+
+//   &.rutile-dropdown {
+//     &__panel {
+//       background-color: var(--rutile-theme-component-background);
+//       padding: 0px 8px;
+//     }
+//   }
+// }
