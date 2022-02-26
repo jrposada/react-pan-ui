@@ -15,7 +15,6 @@
     },
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-    // "typescript.suggest.paths": false
   },
   "launch": {
     "configurations": [
@@ -32,11 +31,12 @@
   },
   "extensions": {
     "recommendations": [
-      "dbaeumer.vscode-eslint",
+      "streetsidesoftware.code-spell-checker",
       "editorconfig.editorconfig",
-      "esbenp.prettier-vscode",
+      "dbaeumer.vscode-eslint",
       "mishannn.vscode-file-suggest",
-      "coenraads.bracket-pair-colorizer"
+      "eamodio.gitlens",
+      "esbenp.prettier-vscode"
     ]
   }
 }
