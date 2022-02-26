@@ -4,10 +4,10 @@ import { HTMLProps, ReactNode, memo, PropsWithChildren } from 'react'
 
 import './button.scss'
 
-type ButtonType = 'primary' | 'secondary' | 'contrast' | 'success' | 'danger'
+type ButtonVariant = 'primary' | 'secondary' | 'contrast' | 'success' | 'danger'
 
 interface ButtonProps extends HTMLProps<HTMLButtonElement> {
-  type?: ButtonType
+  variant?: ButtonVariant
   rounded?: boolean
   loading?: boolean
   noEvents?: boolean
@@ -16,17 +16,19 @@ interface ButtonProps extends HTMLProps<HTMLButtonElement> {
 }
 
 const Button = memo(function Button({
-  type,
+  variant,
   rounded,
   loading,
   noEvents,
   icon,
+  className,
   children,
   disabled,
+  type,
   ...restProps
 }: PropsWithChildren<ButtonProps>) {
   let cssClass = 'pan-ui-button'
-  switch (type) {
+  switch (variant) {
     case 'primary':
       cssClass += ' pan-ui-button--primary'
       break
@@ -48,9 +50,10 @@ const Button = memo(function Button({
   if (!!loading) cssClass += ' pan-ui-button--loading'
   if (!!icon) cssClass += ' pan-ui-button--icon'
   if (!children) cssClass += ' pan-ui-button-fab'
+  if (!!className) cssClass += ` ${className}`
 
   return (
-    <button className={cssClass} {...restProps} disabled={disabled || loading}>
+    <button {...restProps} className={cssClass} disabled={disabled || loading}>
       <div>{children}</div>
       {(!!icon || !!loading) && (
         <div className="pan-ui-button__icon">
@@ -62,4 +65,4 @@ const Button = memo(function Button({
 })
 
 export default Button
-export type { ButtonProps, ButtonType }
+export type { ButtonProps, ButtonVariant as ButtonType }

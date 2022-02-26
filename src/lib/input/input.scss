@@ -1,0 +1,74 @@
+$height: 32px;
+
+.pan-ui-input {
+  box-sizing: border-box;
+  position: relative;
+
+  font-size: var(--pan-ui-font-m);
+
+  &__input-wrapper {
+    padding: var(--pan-ui-padding-xxs) var(--pan-ui-padding-xs);
+
+    display: inline-flex;
+    align-items: center;
+    height: $height;
+    gap: var(--pan-ui-gap-s);
+
+    border-style: solid;
+    border-width: 1px;
+    border-radius: var(--pan-ui-radius-s);
+    outline: none;
+
+    transition: all 250ms ease-out;
+
+    &--loading {
+      cursor: wait;
+    }
+
+    & .pan-ui-input__icon {
+      & svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  &__input {
+    border: none;
+    outline: none;
+
+    &[type='number']::-webkit-inner-spin-button {
+      appearance: none;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+
+      &:hover:not(.pan-ui-input--loading) {
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &__clear {
+    cursor: pointer;
+
+    &--hidden {
+      background-color: transparent;
+      color: transparent;
+
+      cursor: default;
+
+      pointer-events: none;
+    }
+  }
+
+  &__error {
+    color: var(--pan-ui-palette-danger);
+  }
+  &:not(.pan-ui-input--no-error) {
+    & .pan-ui-input__error {
+      height: 19px;
+    }
+  }
+}
