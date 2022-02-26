@@ -1,16 +1,16 @@
 import { CSSProperties, PropsWithChildren } from 'react'
 
-interface AppFooterProps {
+interface AppSideMenuProps {
   className?: string
   style?: CSSProperties
 }
 
-function AppFooter({
+function AppSideMenu({
   className,
   style,
   children,
-}: PropsWithChildren<AppFooterProps>) {
-  let cssClass = 'app-layout__footer'
+}: PropsWithChildren<AppSideMenuProps>) {
+  let cssClass = 'app-layout__side-menu'
   if (!!className) cssClass += ` ${className}`
 
   return (
@@ -20,4 +20,5 @@ function AppFooter({
   )
 }
 
-export default AppFooter
+export default AppSideMenu
+export type { AppSideMenuProps }

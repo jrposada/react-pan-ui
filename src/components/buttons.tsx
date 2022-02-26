@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 import Button, { ButtonProps } from 'lib/button/button'
+import AppBody from 'app-layout/app-body'
 
 const types: ButtonProps[] = [
   { variant: 'primary' },
@@ -40,7 +41,7 @@ function Buttons() {
   )
 
   return (
-    <>
+    <AppBody>
       Buttons
       <div style={{ display: 'flex', gap: '15px' }}>
         {types.map((buttonType, i) => (
@@ -76,7 +77,7 @@ function Buttons() {
           </div>
         ))}
       </div>
-    </>
+    </AppBody>
   )
 }
 

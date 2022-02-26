@@ -1,16 +1,16 @@
 import { CSSProperties, PropsWithChildren } from 'react'
 
-interface MainBodyProps {
+interface AppBodyProps {
   className?: string
   style?: CSSProperties
 }
 
-function MainBody({
+function AppBody({
   className,
   style,
   children,
-}: PropsWithChildren<MainBodyProps>) {
-  let cssClass = 'main-layout__body'
+}: PropsWithChildren<AppBodyProps>) {
+  let cssClass = 'app-layout__body'
   if (!!className) cssClass += ` ${className}`
 
   return (
@@ -20,4 +20,4 @@ function MainBody({
   )
 }
 
-export default MainBody
+export default AppBody

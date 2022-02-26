@@ -2,16 +2,24 @@
   display: grid;
 
   grid-template-rows: auto 1fr auto;
+  grid-template-columns: auto 1fr;
   grid-template-areas:
-    'header'
-    'body'
-    'footer';
+    'header header'
+    'side-menu body'
+    'footer footer';
 
   &__header {
     grid-area: header;
   }
+  &__side-menu {
+    grid-area: side-menu;
+
+    padding: var(--pan-ui-padding-s);
+  }
   &__body {
     grid-area: body;
+
+    padding: var(--pan-ui-padding-s);
   }
   &__footer {
     grid-area: footer;
