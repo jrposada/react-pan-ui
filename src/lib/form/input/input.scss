@@ -1,0 +1,143 @@
+$transition: all 250ms ease-out;
+$height: 32px;
+
+@mixin variant($border-color, $color) {
+  transition: all 250ms ease-out;
+
+  border-color: $border-color;
+
+  .pan-ui-input {
+    &__icon {
+      transition: all 250ms ease-out;
+
+      background-color: $border-color;
+      color: $color;
+    }
+    &__counter {
+      div {
+        transition: all 250ms ease-out;
+
+        border-left-color: $border-color;
+      }
+
+      &::after {
+        transition: all 250ms ease-out;
+
+        background-color: $border-color;
+      }
+    }
+  }
+}
+
+.pan-ui-input {
+  box-sizing: border-box;
+
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--pan-ui-gap-s);
+
+  border-width: 1px;
+  border-style: solid;
+  border-radius: var(--pan-ui-radius-x);
+
+  overflow: hidden;
+
+  @include variant(
+    var(--pan-ui-primary-background-color-active),
+    var(--pan-ui-primary-color)
+  );
+
+  input {
+    height: 16px;
+    flex-grow: 1;
+
+    appearance: none;
+
+    background-color: transparent;
+
+    border: none;
+    outline: none;
+
+    &[type='number'] {
+      &::-webkit-inner-spin-button {
+        appearance: none;
+      }
+    }
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & svg {
+      width: 16px !important;
+      height: 16px !important;
+    }
+  }
+
+  &__clear {
+    cursor: pointer;
+
+    margin: 0px var(--pan-ui-padding-xs);
+
+    opacity: 0.5;
+  }
+
+  &__counter {
+    position: relative;
+
+    height: $height;
+    width: $height;
+
+    div {
+      height: $height / 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-left-width: 1px;
+      border-left-style: solid;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+
+      height: 1px;
+
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+
+  &--focus {
+    @include variant(
+      var(--pan-ui-secondary-background-color-active),
+      var(--pan-ui-secondary-color)
+    );
+  }
+
+  &--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    input {
+      cursor: not-allowed;
+    }
+  }
+
+  &--loading {
+    cursor: wait;
+    input {
+      cursor: wait;
+    }
+  }
+}

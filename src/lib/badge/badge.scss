@@ -1,0 +1,23 @@
+.pan-ui-badge {
+  position: relative;
+
+  &__count {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    transform: translate(50%, -50%);
+    transform-origin: 100% 0%;
+
+    border: 1px solid var(--pan-ui-palette-white);
+    border-radius: 1rem;
+
+    font-size: var(--pan-ui-font-s);
+    padding: 0px var(--pan-ui-padding-xxs);
+
+    background-color: var(--pan-ui-palette-secondary-dark);
+    color: var(--pan-ui-palette-white);
+
+    transition: all 1s;
+  }
+}

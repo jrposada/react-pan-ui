@@ -1,0 +1,26 @@
+.pan-ui-form-field {
+  display: flex;
+  flex-direction: column;
+
+  &__required {
+    color: var(--pan-ui-palette-danger);
+  }
+
+  &__error {
+    height: var(--pan-ui-font-s);
+    font-size: var(--pan-ui-font-s);
+    line-height: var(--pan-ui-font-s);
+
+    color: var(--pan-ui-palette-danger);
+  }
+
+  &--vertical {
+    flex-direction: column;
+    gap: var(--pan-ui-gap-xs);
+  }
+
+  &--horizontal {
+    flex-direction: row;
+    gap: var(--pan-ui-gap-s);
+  }
+}
