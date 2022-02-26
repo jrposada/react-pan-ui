@@ -1,21 +1,16 @@
-import { BrowserRouter as Router } from 'react-router-dom'
-
-import MainLayout from 'main-layout/main-layout'
-
-import 'lib/styles.scss'
-import './App.scss'
-import MainBody from 'main-layout/main-body'
-import ExamplesPage from 'main-layout/pages/examples-page'
+import AppLayout from 'app-layout/app-layout'
+import ExamplesPage from 'app-layout/pages/examples-page'
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 
 function App() {
   return (
-    <Router>
-      <MainLayout>
-        <MainBody>
-          <ExamplesPage />
-        </MainBody>
-      </MainLayout>
-    </Router>
+    <AppLayout>
+      <Router>
+        <Routes>
+          <Route path="/" element={<ExamplesPage />} />
+        </Routes>
+      </Router>
+    </AppLayout>
   )
 }
 

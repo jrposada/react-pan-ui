@@ -6,6 +6,7 @@ import './i18n'
 import App from 'App'
 import reportWebVitals from './reportWebVitals'
 
+import './lib/styles.scss'
 import './index.scss'
 
 ReactDOM.render(
