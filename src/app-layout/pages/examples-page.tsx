@@ -5,16 +5,23 @@ import Inputs from 'components/inputs'
 import FormFields from 'components/form-fields'
 import Tables from 'components/tables'
 import AppBody from 'app-layout/app-body'
+import Selects from 'components/selects'
+import Buttons from 'components/buttons'
 
 function ExamplesPage() {
   return (
     <AppBody>
-      <Badges />
-      <Dots />
-      <FormFields />
-      <Dropdowns />
-      <Tables />
-      <Inputs />
+      <div style={{ padding: '16px 32px' }}>
+        <Selects />
+        <Dropdowns />
+        <Buttons />
+        <Badges />
+        <Dots />
+        <FormFields />
+        <Dropdowns />
+        <Tables />
+        <Inputs />
+      </div>
     </AppBody>
   )
 }
