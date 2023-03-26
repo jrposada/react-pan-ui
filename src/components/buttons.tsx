@@ -72,7 +72,7 @@ function Buttons() {
               onClick={setIsLoadingFor(2000)}
               loading={isLoading}
             >
-              {buttonType.variant ?? 'default'}
+              {isLoading ? 'loading' : buttonType.variant ?? 'default'}
             </Button>
           </div>
         ))}
